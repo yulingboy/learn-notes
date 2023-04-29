@@ -2,7 +2,7 @@ name: Build And Deploy BASIC_NOTES
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-deploy:
