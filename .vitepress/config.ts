@@ -14,7 +14,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     sidebar: geneSidebar(),
     i18n: geneI18n(),
     socialLinks: [
-      { icon: "github", link: "https://github.com/yulingboy/basic-notes" },
+      { icon: "github", link: "https://github.com/yulingboy/learn-notes" },
     ],
     footer: {
       copyright: `Copyright © 2023-${new Date().getFullYear()} 三言两语`,
