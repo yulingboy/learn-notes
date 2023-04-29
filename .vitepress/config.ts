@@ -6,6 +6,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
   title: "三言两语",
+  base: "/learn-notes/",
   head: [["link", { rel: "icon", href: '/' }]],
   srcDir: "src",
   themeConfig: {
