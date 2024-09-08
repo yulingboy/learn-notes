@@ -1,6 +1,7 @@
 import { defineConfigWithTheme } from "vitepress";
 import { type Config as ThemeConfig } from "@vue/theme";
 import baseConfig from "@vue/theme/config";
+import AutoNav from "vite-plugin-vitepress-auto-nav";
 
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
@@ -22,6 +23,11 @@ export default defineConfigWithTheme<ThemeConfig>({
   },
   markdown: {
     lineNumbers: true,
+  },
+  vite: {
+    plugins: [
+      AutoNav({}),
+    ],
   },
 });
 
