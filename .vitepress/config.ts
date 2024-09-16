@@ -7,7 +7,6 @@ export default defineConfig({
   description: '日常记录',
 
   srcDir: './docs',
-  outDir: './dist',
 
   cleanUrls: true,
 
