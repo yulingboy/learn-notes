@@ -1,11 +1,8 @@
-.DS_Store
-Thumbs.db
-db.json
-*.log
-node_modules/
-public/
-.deploy*/
-**/dist
-/stay
-*/cache
-*xiao.js
+# Dependency directories
+node_modules
+
+# .vitepress build dist
+dist
+
+# .vitepress dev server temp files
+cache

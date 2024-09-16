@@ -1,48 +1,48 @@
-import { defineConfigWithTheme } from "vitepress";
-import { type Config as ThemeConfig } from "@vue/theme";
-import baseConfig from "@vue/theme/config";
-import AutoNav from "vite-plugin-vitepress-auto-nav";
+import { defineConfig } from 'vitepress'
+import AutoSidebarPlugin from 'vitepress-auto-sidebar-plugin'
 
-export default defineConfigWithTheme<ThemeConfig>({
-  extends: baseConfig,
+export default defineConfig({
+  lang: 'zh-CN',
+  title: '三言两语',
+  description: '日常记录',
 
-  title: "三言两语",
-  // base: "/learn-notes/",
-  head: [["link", { rel: "icon", href: '/' }]],
-  srcDir: "src",
+  srcDir: './docs',
+  outDir: './dist',
+
+  cleanUrls: true,
+
+
+
   themeConfig: {
-    nav: geneNav(),
-    sidebar: geneSidebar(),
-    i18n: geneI18n(),
+    nav: [
+      { text: 'Git', link: '/git/' },
+      { text: 'About', link: '/about' },
+    ],
+    
+
+    outline: [2, 3],
+
+
     socialLinks: [
       { icon: "github", link: "https://github.com/yulingboy/learn-notes" },
     ],
+
+    lastUpdated: {
+      text: '上次更新时间'
+    },
+    docFooter: {
+      prev: '上一页',
+      next: '下一页'
+    },
+
     footer: {
       copyright: `Copyright © 2023-${new Date().getFullYear()} 三言两语`,
     },
   },
-  markdown: {
-    lineNumbers: true,
-  },
+
   vite: {
     plugins: [
-      AutoNav({}),
-    ],
-  },
-});
-
-// 工具函数
-function geneNav(): ThemeConfig["nav"] {
-  return [];
-}
-function geneSidebar(): ThemeConfig["sidebar"] {
-  return {};
-}
-function geneI18n(): ThemeConfig["i18n"] {
-  return {
-    toc: "本页目录",
-    previous: "前一篇",
-    next: "下一篇",
-    pageNotFound: "页面未找到",
-  };
-}
+      AutoSidebarPlugin()
+    ]
+  }
+})
